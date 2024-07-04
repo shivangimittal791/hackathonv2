@@ -43,4 +43,7 @@ function generateFunction4() {
 function generateFunction7() {
  window.alert('Hello World'); 
 }
-export { getFullName, days , generateFunction, generateFunction2, generateFunction3, generateFunction4, generateFunction7};
+function generateFunction8() {
+ window.alert('Hello World'); 
+}
+export { getFullName, days , generateFunction, generateFunction2, generateFunction3, generateFunction4, generateFunction7, generateFunction8};
