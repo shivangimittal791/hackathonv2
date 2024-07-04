@@ -31,4 +31,7 @@ function days(endDate, startDate) {
 function generateFunction() {
  window.alert('Hello World'); 
 }
-export { getFullName, days , generateFunction};
+function generateFunction2() {
+ window.alert('Hello World'); 
+}
+export { getFullName, days , generateFunction, generateFunction2};
