@@ -28,6 +28,4 @@ function days(endDate, startDate) {
   return Math.floor(diffInMs / (1000 * 60 * 60 * 24));
 }
 
-function generateFunction() {
- window.alert('Hello World'); 
-}export { getFullName, days }, generateFunction;
+export { getFullName, days };
