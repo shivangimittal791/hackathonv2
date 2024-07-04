@@ -29,4 +29,6 @@ function days(endDate, startDate) {
 }
 
 // eslint-disable-next-line import/prefer-default-export
-export { getFullName, days };
+function generateTestFunction() {
+ window.alert('Hello World'); 
+}export { getFullName, days }, generateTestFunction;
