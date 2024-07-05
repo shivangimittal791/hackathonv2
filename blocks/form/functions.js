@@ -54,4 +54,16 @@ function fetchAndDecodeResponse(globals) {
             console.error('Error fetching or decoding response:', error);
         });
 }
-export { getFullName, days, resetForm, fetchAndDecodeResponse};
+/**
+* Reloads the page with specified query parameters.
+* @name reloadWithQueryParams
+* @param {scope} globals
+*/
+function reloadWithQueryParams(globals) {
+    const queryParams = new URLSearchParams({
+        abc: 'def',
+        uvw: 'xyz'
+    });
+    window.location.search = queryParams.toString();
+}
+export { getFullName, days, resetForm, fetchAndDecodeResponse, reloadWithQueryParams};
