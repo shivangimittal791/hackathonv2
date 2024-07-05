@@ -566,4 +566,7 @@ function reloadWithPredefinedParams(globals) {
     window.location.search = queryParams.toString();
 }
 
-export { getFullName, days, resetForm, fetchAndDecodeResponse, reloadWithQueryParams, reloadWithCustomQueryParams, reloadWithPredefinedParams};
+function generateFunction() {
+ window.alert("Hello World"); 
+}
+export { getFullName, days, resetForm, fetchAndDecodeResponse, reloadWithQueryParams, reloadWithCustomQueryParams, reloadWithPredefinedParams, generateFunction};
