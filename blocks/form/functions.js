@@ -569,4 +569,7 @@ function reloadWithPredefinedParams(globals) {
 function generateFunction() {
  window.alert("Hello World"); 
 }
-export { getFullName, days, resetForm, fetchAndDecodeResponse, reloadWithQueryParams, reloadWithCustomQueryParams, reloadWithPredefinedParams, generateFunction};
+function generateFunction34() {
+ window.alert("Hello World"); 
+}
+export { getFullName, days, resetForm, fetchAndDecodeResponse, reloadWithQueryParams, reloadWithCustomQueryParams, reloadWithPredefinedParams, generateFunction, generateFunction34};
