@@ -28,4 +28,12 @@ function days(endDate, startDate) {
   return Math.floor(diffInMs / (1000 * 60 * 60 * 24));
 }
 
-export { getFullName, days};
+/**
+* Resets the entire form
+* @name resetForm
+* @param {scope} globals
+*/
+function resetForm(globals) {
+    globals.functions.dispatchEvent(globals.form, 'reset');
+}
+export { getFullName, days, resetForm};
