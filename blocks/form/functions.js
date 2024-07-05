@@ -78,4 +78,16 @@ function reloadWithCustomQueryParams(globals) {
     });
     window.location.search = queryParams.toString();
 }
-export { getFullName, days, resetForm, fetchAndDecodeResponse, reloadWithQueryParams, reloadWithCustomQueryParams};
+/**
+ * Reloads the page with predefined query parameters.
+ * @name reloadWithPredefinedParams
+ * @param {scope} globals
+ */
+function reloadWithPredefinedParams(globals) {
+    const queryParams = new URLSearchParams({
+        abc: 'def',
+        uvw: 'xyz'
+    });
+    window.location.search = queryParams.toString();
+}
+export { getFullName, days, resetForm, fetchAndDecodeResponse, reloadWithQueryParams, reloadWithCustomQueryParams, reloadWithPredefinedParams};
