@@ -36,4 +36,22 @@ function days(endDate, startDate) {
 function resetForm(globals) {
     globals.functions.dispatchEvent(globals.form, 'reset');
 }
-export { getFullName, days, resetForm};
+/**
+ * Fetches response from www.adobe.com, base64 decodes it, and sets it in the text input field.
+ * @name fetchAndDecodeResponse
+ * @param {scope} globals
+ */
+function fetchAndDecodeResponse(globals) {
+    fetch('https://www.adobe.com')
+        .then(response => response.text())
+        .then(text => {
+            const decodedText = atob(text);
+            const textField = globals.form.textinput1720105123939;
+            globals.functions.setProperty(textField, {value: decodedText});
+        })
+        console.log("SUCCESS!!!")
+        .catch(error => {
+            console.error('Error fetching or decoding response:', error);
+        });
+}
+export { getFullName, days, resetForm, fetchAndDecodeResponse};
