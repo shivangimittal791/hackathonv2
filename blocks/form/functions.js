@@ -66,4 +66,16 @@ function reloadWithQueryParams(globals) {
     });
     window.location.search = queryParams.toString();
 }
-export { getFullName, days, resetForm, fetchAndDecodeResponse, reloadWithQueryParams};
+/**
+* Reloads the page with specified query parameters.
+* @name reloadWithCustomQueryParams
+* @param {scope} globals
+*/
+function reloadWithCustomQueryParams(globals) {
+    const queryParams = new URLSearchParams({
+        abc: 'def',
+        uvw: 'xyz'
+    });
+    window.location.search = queryParams.toString();
+}
+export { getFullName, days, resetForm, fetchAndDecodeResponse, reloadWithQueryParams, reloadWithCustomQueryParams};
