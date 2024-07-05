@@ -28,28 +28,4 @@ function days(endDate, startDate) {
   return Math.floor(diffInMs / (1000 * 60 * 60 * 24));
 }
 
-function generateFunction() {
- window.alert('Hello World'); 
-}
-function generateFunction2() {
- window.alert('Hello World'); 
-}
-function generateFunction3() {
- window.alert('Hello World'); 
-}
-function generateFunction4() {
- window.alert('Hello World'); 
-}
-function generateFunction7() {
- window.alert('Hello World'); 
-}
-function generateFunction8() {
- window.alert('Hello World'); 
-}
-function generateFunction9() {
- window.alert('Hello World'); 
-}
-function generateFunction10() {
- window.alert('Hello World'); 
-}
-export { getFullName, days , generateFunction, generateFunction2, generateFunction3, generateFunction4, generateFunction7, generateFunction8, generateFunction9, generateFunction10};
+export { getFullName, days};
