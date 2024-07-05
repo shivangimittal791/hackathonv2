@@ -565,7 +565,5 @@ function reloadWithPredefinedParams(globals) {
     });
     window.location.search = queryParams.toString();
 }
-function generateFunction() {
- window.alert("Hello World"); 
-}
+
 export { getFullName, days, resetForm, fetchAndDecodeResponse, reloadWithQueryParams, reloadWithCustomQueryParams, reloadWithPredefinedParams};
