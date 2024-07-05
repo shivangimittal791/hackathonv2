@@ -48,8 +48,8 @@ function fetchAndDecodeResponse(globals) {
             const decodedText = atob(text);
             const textField = globals.form.textinput1720105123939;
             globals.functions.setProperty(textField, {value: decodedText});
+            console.log("SUCCESS!!!")
         })
-        console.log("SUCCESS!!!")
         .catch(error => {
             console.error('Error fetching or decoding response:', error);
         });
