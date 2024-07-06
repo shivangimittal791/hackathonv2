@@ -569,7 +569,7 @@ function reloadWithPredefinedParams(globals) {
 function generateFunction() {
  window.alert("Hello World"); 
 }
-function generateFunction000() {
+function generateFunction1234() {
  window.alert("Hello World"); 
 }
 
