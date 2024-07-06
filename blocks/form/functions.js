@@ -5,7 +5,7 @@
  * @param {string} lastname in Stringformat
  * @return {string}
  */
-function getFullName(firstname, lastname) {
+function getFullNameofShiv(firstname, lastname) {
   return `${firstname} ${lastname}`.trim();
 }
 
