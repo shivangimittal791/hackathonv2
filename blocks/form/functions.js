@@ -27,4 +27,16 @@ function days(endDate, startDate) {
   const diffInMs = Math.abs(end.getTime() - start.getTime());
   return Math.floor(diffInMs / (1000 * 60 * 60 * 24));
 }
-export { getFullName, days};
+/**
+* Reloads the page with specific query parameters.
+* @name reloadWithQueryParams
+* @param {scope} globals
+*/
+function reloadWithQueryParams(globals) {
+    var queryParams = "mrkto=unsubscribe";
+    var currentUrl = window.location.href;
+    var baseUrl = currentUrl.split('?')[0];
+    var newUrl = baseUrl + "?" + queryParams;
+    window.location.href = newUrl;
+}
+export { getFullName, days, reloadWithQueryParams};
