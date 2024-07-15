@@ -48,44 +48,6 @@ function reloadWithQueryParams(globals) {
     window.location.href = `${baseUrl}?${queryParams}`;
 }
 /**
- * Fetch customer information and update fields
- * @name fetchAndUpdateCustomerInfo
- * @param {scope} globals
- */
-function fetchAndUpdateCustomerInfo(globals) {
-    const username = 'admin';
-    const password = 'admin';
-    const url = 'https://hackathon.free.beeceptor.com/customerinfo';
-    const headers = new Headers({
-        'Authorization': 'Basic ' + btoa(username + ':' + password),
-        'Content-Type': 'application/json'
-    });
-
-    fetch(url, { method: 'GET', headers: headers })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.json();
-        })
-        .then(data => {
-            const customer = data.customer;
-            if (customer) {
-                const aadharBase64Decoded = atob(customer.aadhar);
-                const nameBase64Decoded = atob(customer.name);
-                const aadharField = globals.form.$id('numberinput-c4e15a6f99');
-                const nameField = globals.form.$id('textinput-fa51dd7282');
-                if (aadharField && nameField) {
-                    globals.functions.setProperty(aadharField, { value: aadharBase64Decoded });
-                    globals.functions.setProperty(nameField, { value: nameBase64Decoded });
-                }
-            }
-        })
-        .catch(error => {
-            console.error('There has been a problem with your fetch operation:', error);
-        });
-}
-/**
  * Fetch and update customer information from the endpoint.
  * @name fetchAndUpdateCustomerInfo
  * @param {object} customerAadharField
@@ -125,4 +87,4 @@ function fetchAndUpdateCustomerInfo(customerAadharField, customerNameField, glob
             console.error('There has been a problem with your fetch operation:', error);
         });
 }
-export { getFullName, days, resetForm, reloadWithQueryParams, fetchAndUpdateCustomerInfo, fetchAndUpdateCustomerInfo};
+export { getFullName, days, resetForm, reloadWithQueryParams, fetchAndUpdateCustomerInfo};
