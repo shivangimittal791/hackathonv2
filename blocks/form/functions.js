@@ -85,4 +85,44 @@ function fetchAndUpdateCustomerInfo(globals) {
             console.error('There has been a problem with your fetch operation:', error);
         });
 }
-export { getFullName, days, resetForm, reloadWithQueryParams, fetchAndUpdateCustomerInfo};
+/**
+ * Fetch and update customer information from the endpoint.
+ * @name fetchAndUpdateCustomerInfo
+ * @param {object} customerAadharField
+ * @param {object} customerNameField
+ * @param {scope} globals
+ */
+function fetchAndUpdateCustomerInfo(customerAadharField, customerNameField, globals) {
+    const username = 'admin';
+    const password = 'admin';
+    const url = 'https://hackathon.free.beeceptor.com/customerinfo';
+    const headers = new Headers({
+        'Authorization': 'Basic ' + btoa(username + ':' + password),
+        'Content-Type': 'application/json'
+    });
+
+    fetch(url, { method: 'GET', headers: headers })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            const customer = data.customer;
+            if (customer) {
+                if (customer.aadhar) {
+                    const aadharDecoded = atob(customer.aadhar);
+                    globals.functions.setProperty(customerAadharField, { value: aadharDecoded });
+                }
+                if (customer.name) {
+                    const nameDecoded = atob(customer.name);
+                    globals.functions.setProperty(customerNameField, { value: nameDecoded });
+                }
+            }
+        })
+        .catch(error => {
+            console.error('There has been a problem with your fetch operation:', error);
+        });
+}
+export { getFullName, days, resetForm, reloadWithQueryParams, fetchAndUpdateCustomerInfo, fetchAndUpdateCustomerInfo};
