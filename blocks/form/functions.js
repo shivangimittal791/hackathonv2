@@ -27,14 +27,4 @@ function days(endDate, startDate) {
   const diffInMs = Math.abs(end.getTime() - start.getTime());
   return Math.floor(diffInMs / (1000 * 60 * 60 * 24));
 }
-
-/**
-* Resets the entire form
-* @name resetForm
-* @param {scope} globals
-*/
-function resetForm(globals) {
-    globals.functions.dispatchEvent(globals.form, 'reset');
-}
-
-export { getFullName, days, resetForm};
+export { getFullName, days};
