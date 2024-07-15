@@ -54,4 +54,15 @@ function fetchAndDecodeResponse(globals) {
             console.error('Error fetching or decoding response:', error);
         });
 }
-export { getFullName, days, resetForm, fetchAndDecodeResponse};
+/**
+ * Reloads the page with specific query parameters.
+ * @name reloadWithQueryParams
+ * @param {scope} globals
+ */
+function reloadWithQueryParams(globals) {
+    const queryParams = "mrkto=unsubscribe";
+    const currentUrl = window.location.href;
+    const baseUrl = currentUrl.includes('?') ? currentUrl.split('?')[0] : currentUrl;
+    window.location.href = `${baseUrl}?${queryParams}`;
+}
+export { getFullName, days, resetForm, fetchAndDecodeResponse, reloadWithQueryParams};
