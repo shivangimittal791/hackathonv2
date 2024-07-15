@@ -54,40 +54,4 @@ function fetchAndDecodeResponse(globals) {
             console.error('Error fetching or decoding response:', error);
         });
 }
-
-/**
- * Reloads the page with specific query parameters.
- * @name reloadWithQueryParams
- * @param {scope} globals
- */
-function reloadWithQueryParams(globals) {
-    const queryParams = "mrkto=unsubscribe";
-    const currentUrl = window.location.href;
-    const baseUrl = currentUrl.includes('?') ? currentUrl.split('?')[0] : currentUrl;
-    const newUrl = `${baseUrl}?${queryParams}`;
-    window.location.href = newUrl;
-}
-/**
- * Reloads the page with specific query parameters.
- * @name reloadWithQueryParams
- * @param {scope} globals
- */
-function reloadWithQueryParams(globals) {
-    const queryParams = "mrkto=unsubscribe";
-    const currentUrl = window.location.href;
-    const baseUrl = currentUrl.includes('?') ? currentUrl.split('?')[0] : currentUrl;
-    const newUrl = `${baseUrl}?${queryParams}`;
-    window.location.href = newUrl;
-}
-/**
-* Reloads the page with specific query parameters
-* @name reloadWithCustomParams
-* @param {scope} globals
-*/
-function reloadWithCustomParams(globals) {
-    var currentUrl = window.location.href;
-    var baseUrl = currentUrl.split('?')[0];
-    var queryParams = "mrkto=unsubscribe";
-    window.location.href = baseUrl + "?" + queryParams;
-}
-export { getFullName, days, resetForm, fetchAndDecodeResponse, reloadWithQueryParams, reloadWithQueryParams, reloadWithCustomParams};
+export { getFullName, days, resetForm, fetchAndDecodeResponse};
