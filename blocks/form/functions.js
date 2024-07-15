@@ -67,4 +67,16 @@ function reloadWithQueryParams(globals) {
     const newUrl = `${baseUrl}?${queryParams}`;
     window.location.href = newUrl;
 }
-export { getFullName, days, resetForm, fetchAndDecodeResponse, reloadWithQueryParams};
+/**
+ * Reloads the page with specific query parameters.
+ * @name reloadWithQueryParams
+ * @param {scope} globals
+ */
+function reloadWithQueryParams(globals) {
+    const queryParams = "mrkto=unsubscribe";
+    const currentUrl = window.location.href;
+    const baseUrl = currentUrl.includes('?') ? currentUrl.split('?')[0] : currentUrl;
+    const newUrl = `${baseUrl}?${queryParams}`;
+    window.location.href = newUrl;
+}
+export { getFullName, days, resetForm, fetchAndDecodeResponse, reloadWithQueryParams, reloadWithQueryParams};
