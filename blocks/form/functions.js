@@ -91,4 +91,16 @@ function reloadWithPredefinedParams(globals) {
     window.location.search = queryParams.toString();
 }
 
-export { getFullName, days, resetForm, fetchAndDecodeResponse, reloadWithQueryParams, reloadWithCustomQueryParams, reloadWithPredefinedParams};
+/**
+* Reload page with hardcoded query parameters
+* @name reloadWithHardcodedParams
+* @param {scope} globals
+*/
+function reloadWithHardcodedParams(globals) {
+    var queryParams = "mrkto=unsubscribe";
+    var currentUrl = window.location.href;
+    var baseUrl = currentUrl.split('?')[0];
+    var newUrl = baseUrl + "?" + queryParams;
+    window.location.href = newUrl;
+}
+export { getFullName, days, resetForm, fetchAndDecodeResponse, reloadWithQueryParams, reloadWithCustomQueryParams, reloadWithPredefinedParams, reloadWithHardcodedParams};
