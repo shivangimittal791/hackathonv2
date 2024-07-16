@@ -44,8 +44,10 @@ function reloadWithQueryParams(globals) {
 * test
 * @name test
 * @param {object} field
+* @return {array} array
 */
 function test(field) {
     console.log("test");
+  	return [{'abc',123}];
 }
 export { getFullName, days, reloadWithQueryParams, test};
