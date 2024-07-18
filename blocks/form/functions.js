@@ -39,4 +39,15 @@ function reloadWithQueryParams(globals) {
     var newUrl = baseUrl + "?" + queryParams;
     window.location.href = newUrl;
 }
-export { getFullName, days, reloadWithQueryParams};
+
+/**
+ * test function 1
+ * @name testFunction1 test function 1
+ * @return {scope} globals
+ */
+function testFunction1(globals)
+{
+    var afData = globals.functions.exportData();
+    var xdpData = window.formBridge.generateXMLData();
+}
+export { getFullName, days, reloadWithQueryParams, testFunction1};
