@@ -43,7 +43,7 @@ function reloadWithQueryParams(globals) {
 /**
  * test function 1
  * @name testFunction1 test function 1
- * @praram {scope} globals
+ * @param {scope} globals
  */
 function testFunction1(globals)
 {
