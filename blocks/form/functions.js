@@ -50,4 +50,15 @@ function testFunction1(globals)
     var afData = globals.functions.exportData();
     var xdpData = window.formBridge.generateXMLData();
 }
-export { getFullName, days, reloadWithQueryParams, testFunction1};
+
+function getURL_Parameter () {
+    var queryString = window.location.search;
+    var urlParams = new URLSearchParams(queryString);
+     if(urlParams.has('generatedID')){
+         var generatedID = urlParams.get('generatedID');
+         return generatedID;
+     }
+     return '';
+ }
+
+export { getFullName, days, reloadWithQueryParams, testFunction1, getURL_Parameter};
