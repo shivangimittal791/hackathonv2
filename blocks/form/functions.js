@@ -39,15 +39,4 @@ function reloadWithQueryParams(globals) {
     var newUrl = baseUrl + "?" + queryParams;
     window.location.href = newUrl;
 }
-
-/**
-* test
-* @name test
-* @param {object} field
-* @return {array} array
-*/
-function test(field) {
-    console.log("test");
-  	return [{'abc',123}];
-}
-export { getFullName, days, reloadWithQueryParams, test};
+export { getFullName, days, reloadWithQueryParams};
